@@ -106,4 +106,4 @@ dist
 # prisma
 generated
 prisma.yml
-.prisma
+*.prisma
