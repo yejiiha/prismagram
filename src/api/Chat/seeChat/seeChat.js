@@ -1,5 +1,4 @@
 import { prisma } from "../../../../generated/prisma-client";
-import { CHAT_FRAGMENT } from "../../../fragments";
 
 export default {
   Query: {
@@ -13,7 +12,7 @@ export default {
         },
       });
       if (canAccess) {
-        return prisma.chat({ id }).$fragment(CHAT_FRAGMENT);
+        return prisma.chat({ id });
       } else {
         throw Error("You can't access this chat");
       }
