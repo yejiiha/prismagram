@@ -18,6 +18,11 @@ export default {
         .usersConnection({ where: { following_none: { id } } })
         .aggregate()
         .count(),
+    postsCount: ({ id }) =>
+      prisma
+        .postsConnection({ where: { user: { id } } })
+        .aggregate()
+        .count(),
     fullName: (parent) => {
       return `${parent.firstName} ${parent.lastName}`;
     },
